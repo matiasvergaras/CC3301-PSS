@@ -36,61 +36,56 @@ void reducir(char *s){
     }
     *act=*sig; //Agregamos el final de string
 }
-
 char* reduccion(char* s){
     char *c = s;
     //Primero contamos los char que queremos mantener para pedir memoria
-    int chars=0;
+    int borrar=0;
     int esp=0;
     for(int i=0; i<strlen(s); i++){
-        if(esp==0){
-            if (*c==' ') {
-                esp++;
-                chars++;
-            }
-            else{
-                chars++;
-            }
-        }
-        else if(esp==1){
-            if(*c!=' '){
-                esp--;
-                chars++;
-            }
-            else{
-            }
+        switch(esp){
+            case 0:
+                if(*c==' '){
+                    esp++;
+                }
+            case 1:
+                if(*c!=' '){
+                    esp--;
+                }
+                else if(*c==' '){
+                    borrar++;
+                }
+
         }
         c++;
     }
 
-    char* salida = (char*)malloc( sizeof(char)*(chars+1));
+    char* salida = (char*)malloc( sizeof(char)*(strlen(s)-borrar+1));
     char* iter = salida;
     esp=0;
     int largooriginal=strlen(s);
     for(int j=0; j<=largooriginal; j++){
-        if(esp==0){
-            if(*s!=' '){
-                *iter++=*s;
-                s++;
-            }
-            else{
-                *iter++=*s;
-                esp++;
-                s++;
-            }
+        switch(esp){
+            case 0:
+                if(*s!=' '){
+                    *iter++=*s;
+                }
+                else if(*s==' '){
+                    *iter++=*s;
+                    esp++;
+                }
+                break;
+
+            case 1:
+                if(*s!=' '){
+                    *iter++=*s;
+                    esp--;
+                }
+                break;
         }
-        else if(esp==1){
-            if(*s!=' '){
-                *iter++=*s;
-                esp--;
-                s++;
-            }
-            else{
-                s++;
-            }
-        }
+        s++;
     }
     return salida;
 }
+
 
 
