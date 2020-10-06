@@ -6,31 +6,31 @@ Tiempos son dados en milisegundos (ms).
 
 -----Comando: make test-g-----
 
-Tiempo para reducir: 3418
-Tiempo para reduccion: 4227
-Tiempo para reduccion trivial: 4752
+Tiempo para reducir: 3547
+Tiempo para reduccion: 5679
+Tiempo para reduccion trivial: 6483
 
-reducir/reduccion: 0.8086
-reduccion/trivial: 0.8895
+reducir/reduccion: 0.6245
+reduccion/trivial: 0.8759
 
 
 
 -----Comando: make test-O------
 
-Tiempo para reducir: 2431
-Tiempo para reduccion: 3643
-Tiempo para reduccion trivial: 4628
+Tiempo para reducir: 2440
+Tiempo para reduccion: 3606
+Tiempo para reduccion trivial: 6172
 
-reducir/reduccion: 0.6673
-reduccion/trivial: 0.7871
+reducir/reduccion: 0.6766
+reduccion/trivial: 0.5842
 
 
 
 -----Comando: make test-O-m32-----
 
-Tiempo para reducir: 2603
-Tiempo para reduccion: 4240
-Tiempo para reduccion trivial: 5160
+Tiempo para reducir: 2624
+Tiempo para reduccion: 4251
+Tiempo para reduccion trivial: 7019
 
-reducir/reduccion: 0.6139
-reduccion/trivial: 0.8217
+reducir/reduccion: 0.6172
+reduccion/trivial: 0.6056
