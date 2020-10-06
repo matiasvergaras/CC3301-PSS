@@ -1,0 +1,35 @@
+Tarea 2. Strings y punteros
+Alumno: Matias Vergara
+
+Tiempos son dados en milisegundos (ms).
+
+-----Comando: make test-g-----
+
+Tiempo para reducir: 3418
+Tiempo para reduccion: 4227
+Tiempo para reduccion trivial: 4752
+
+reducir/reduccion: 0.8086
+reduccion/trivial: 0.8895
+
+
+
+-----Comando: make test-O------
+
+Tiempo para reducir: 2431
+Tiempo para reduccion: 3643
+Tiempo para reduccion trivial: 4628
+
+reducir/reduccion: 0.6673
+reduccion/trivial: 0.7871
+
+
+
+-----Comando: make test-O-m32-----
+
+Tiempo para reducir: 2603
+Tiempo para reduccion: 4240
+Tiempo para reduccion trivial: 5160
+
+reducir/reduccion: 0.6139
+reduccion/trivial: 0.8217

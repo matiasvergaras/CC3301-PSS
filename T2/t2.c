@@ -42,26 +42,27 @@ char* reduccion(char* s){
     }
 
     //asignamos la memoria necesaria. Sumamos 2 por el primer caracter y el 0 final.
-    char* salida = (char*)malloc(sizeof(char)*(chars+2));
+    char* salida = malloc(sizeof(char)*(chars+2));
     char* iter = salida;
-    if(*s!=0){
-        *iter=*s;
+    char esp='0'; //funciona como un bool, indica si se paso un espacio o no
+    int largooriginal=strlen(s);
+    for(int j=0; j<=largooriginal; j++){
+        if(esp=='0'){
+            if(*s!=' '){
+                *iter++=*s;
+            }
+            else if(*s==' '){
+                *iter++=*s;
+                esp++;
+            }
+        }
+        else if(esp=='1'){
+            if(*s!=' '){
+                *iter++=*s;
+                esp--;
+            }
+        }
         s++;
     }
-
-    while(*s){
-        if(*s != ' '){
-            iter++;
-            *iter=*s;
-
-        }
-        else if(*s == ' ' && *iter!=' '){
-            iter++;
-            *iter=*s;
-        }
-        s++;
-    }
-
-    *++iter=*s;
     return salida;
 }
