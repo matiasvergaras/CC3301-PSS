@@ -23,6 +23,7 @@ void reducir(char *s){
     }
 }
 
+
 char* reduccion(char* s){
     //Primero contamos los char que queremos mantener para pedir memoria
     char *c = s;
@@ -42,27 +43,26 @@ char* reduccion(char* s){
     }
 
     //asignamos la memoria necesaria. Sumamos 2 por el primer caracter y el 0 final.
-    char* salida = malloc(sizeof(char)*(chars+2));
+    char* salida = (char*)malloc(sizeof(char)*(chars+2));
     char* iter = salida;
-    char esp='0'; //funciona como un bool, indica si se paso un espacio o no
-    int largooriginal=strlen(s);
-    for(int j=0; j<=largooriginal; j++){
-        if(esp=='0'){
-            if(*s!=' '){
-                *iter++=*s;
-            }
-            else if(*s==' '){
-                *iter++=*s;
-                esp++;
-            }
+    if(*s!=0){
+        *iter=*s;
+        s++;
+    }
+
+    while(*s){
+        if(*s != ' '){
+            iter++;
+            *iter=*s;
+
         }
-        else if(esp=='1'){
-            if(*s!=' '){
-                *iter++=*s;
-                esp--;
-            }
+        else if(*s == ' ' && *iter!=' '){
+            iter++;
+            *iter=*s;
         }
         s++;
     }
+
+    *++iter=*s;
     return salida;
 }

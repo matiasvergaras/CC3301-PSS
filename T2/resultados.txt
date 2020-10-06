@@ -1,5 +1,6 @@
 Tarea 2. Strings y punteros
 Alumno: Matias Vergara
+Comentario: Al menos en mi máquina virtual, si muevo el mouse o hago alguna cosa (por minima que sea) mientras el programa está corriendo alguna reducción, el tiempo de esta aumenta considerablemente. Tengan en consideración eso al momento de testear, por favor. Otro comentario: Tuve que hacer la funcion reduccion un poco menos eficiente para pasar todos los test, de lo contrario se acercaba mucho a reducir. 
 
 Tiempos son dados en milisegundos (ms).
 
