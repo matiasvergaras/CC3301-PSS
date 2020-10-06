@@ -3,89 +3,65 @@
 #include <string.h>
 
 void reducir(char *s){
-    int esp = 0; //Funciona como un bool. Nos indica si paso un espacio.
-    char*act = s; //Caracter 'actual'
-    char*sig = s; //Caracter 'siguiente'
-    while (*sig != '\0'){
-        if(*sig==' '){
-            if(esp==1){
-                *act=*sig;
-                sig++;
-            }
-            else{
-                *act=*sig;
-                sig++;
-                act++;
-                esp++;
-            }
-        }
-        else if(*sig!=' '){
-            if(esp == 1){
-                *act=*sig;
-                act++;
-                sig++;
-                esp--;
-            }
-            else{
-                *act=*sig;
-                sig++;
-                act++;
-            }
+    char *obj = s; //objetivo: donde modificamos el string s
+    char *prev = s; //previo: donde llevamos lo ultimo que pasamos a s
+    char *sig = s; //siguiente: donde vamos
 
-        }
+    if(*obj!='0'){ //Para evitar un seg fault
+        sig++;
     }
-    *act=*sig; //Agregamos el final de string
-}
-char* reduccion(char* s){
-    char *c = s;
-    //Primero contamos los char que queremos mantener para pedir memoria
-    int borrar=0;
-    int esp=0;
-    for(int i=0; i<strlen(s); i++){
-        switch(esp){
-            case 0:
-                if(*c==' '){
-                    esp++;
-                }
-            case 1:
-                if(*c!=' '){
-                    esp--;
-                }
-                else if(*c==' '){
-                    borrar++;
-                }
 
+    while(*obj){
+        if(*sig!=' '){ //Esto incluye el 0 final, que cierra el string obj.
+            *++obj=*sig;
         }
+        else if(*sig==' ' && *prev!=' '){
+            *++obj=*sig;
+        }
+        sig++;
+        prev++;
+    }
+}
+
+char* reduccion(char* s){
+    //Primero contamos los char que queremos mantener para pedir memoria
+    char *c = s;
+    char *d = s;
+    int chars=0;
+
+    if(*c!='0'){ //Para evitar un seg fault
+        d++;
+    }
+
+    while(*d){
+        if(*d!=' ' || (*d==' ' && *c!=' ')){
+            chars++;
+        }
+        d++;
         c++;
     }
 
-    char* salida = (char*)malloc( sizeof(char)*(strlen(s)-borrar+1));
+    //asignamos la memoria necesaria. Sumamos 2 por el primer caracter y el 0 final.
+    char* salida = (char*)malloc(sizeof(char)*(chars+2));
     char* iter = salida;
-    esp=0;
-    int largooriginal=strlen(s);
-    for(int j=0; j<=largooriginal; j++){
-        switch(esp){
-            case 0:
-                if(*s!=' '){
-                    *iter++=*s;
-                }
-                else if(*s==' '){
-                    *iter++=*s;
-                    esp++;
-                }
-                break;
+    if(*s!=0){
+        *iter=*s;
+        s++;
+    }
 
-            case 1:
-                if(*s!=' '){
-                    *iter++=*s;
-                    esp--;
-                }
-                break;
+    while(*s){
+        if(*s != ' '){
+            iter++;
+            *iter=*s;
+
+        }
+        else if(*s == ' ' && *iter!=' '){
+            iter++;
+            *iter=*s;
         }
         s++;
     }
+
+    *++iter=*s;
     return salida;
 }
-
-
-
