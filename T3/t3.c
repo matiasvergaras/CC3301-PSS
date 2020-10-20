@@ -1,3 +1,4 @@
+
 // Tarea 3: Estructuras recursivas
 // Created by Matías Vergara on 18/10/2020.
 //
@@ -5,45 +6,79 @@
 #include "t3.h"
 
 void desbalancear(Nodo **pa, Nodo **pult){
-    Nodo* a = *pa;
-    /*
-     * -> Si este nodo tiene hijo izquierdo y derecho nulo -> esta desbalanceado al maximo
-     *
-     * -> Si este nodo tiene hijo izquierdo nulo y derecho no nulo -> itero hacia la derecha. Una vez
-     * que se vuelva a este scope, el arbol de la derecha estará balanceado, y como no hay hijo izquierdo,
-     * el nodo entero lo estará.
-     *
-     * -> Si este nodo tiene hijo izquierdo no nulo y derecho nulo -> itero hacia la izquierda. Una vez
-     * que se vuelva a este scope, el de la izquierda estará balanceado, pero debo poner padre al final
-     * del ultimo nodo de izquierda. Para eso debo tener guardado en *pult el mas menor de todos,
-     * hacer que *pa sea el hijo de la izquierda del padre,
-     * asignarle a pult padre como hijo de la derecha, hacer que padre tenga hijo izq nulo.
-     *
-     * -> Si este nodo tiene hijo izquierdo y derecho no nulos -> balanceo el de la derecha,
-     * asignando pult, y luego el de la izquierda
-     * (pues el de la derecha no cambia el padre, el de la izquierda si).
-     */
-    if (a->izq == NULL && a->der == NULL){
-        pult = &a;
-        return 0;
+
+    if ((*pa)->izq == NULL && (*pa)->der == NULL){
+        (*pult) = (*pa);
     }
-    else if (a->izq == NULL && a->der != NULL){
-        desbalancear(&a->der, pult)
+
+    else if ((*pa)->izq == NULL && (*pa)->der != NULL){
+        desbalancear(&((*pa)->der), pult);
     }
-    else if(a->izq != NULL && a->der == NULL){
-        desbalancear(&a->izq, pult)
-        Nodo* pcopy = a;
-        pa = &(a->izq);
-        Nodo* ult = *pult;
-        ult->der = pcopy;
-        pcopy->izq = NULL;
+
+    else if((*pa)->izq != NULL && (*pa)->der == NULL){
+        desbalancear(&((*pa)->izq), pult);
+        Nodo* nuevacabeza = (*pa)->izq;
+        //que el nodo al que apunta pult tenga por hijo derecho al nodo padre
+        (*pult)->der=(*pa);
+        //que el puntero al ultimo nodo apunte al padre
+        (*pult) = (*pult)->der;
+        //que el hijo izquierdo del padre sea nulo
+        (*pa)->izq = NULL;
+        //que el puntero pa pase a apuntar al hijo izquierdo, nueva cabeza
+        (*pa) = nuevacabeza;
     }
-    else if(a->der != NULL && a->izq != NULL){
-        desbalancear(&a->der, pult);
-        Nodo* paux = *pult;
-        desbalancear(&a->izq, pult);
-        pult = &paux;
+
+    else if((*pa)->der != NULL && (*pa)->izq != NULL){
+        desbalancear(&(*pa)->izq, pult);
+        Nodo* nuevacabeza = (*pa)->izq;
+        (*pult)->der=(*pa);
+        (*pa)->izq=NULL;
+        desbalancear(&(*pa)->der, pult);
+        (*pa)=nuevacabeza;
     }
+
 }
 
-void desbalanceado(Nodo *a, Nodo **pult);
+
+Nodo* desbalanceado(Nodo *a, Nodo **pult){
+    Nodo* nuevoNodo = malloc(sizeof(Nodo));
+    nuevoNodo->id = a->id;
+    nuevoNodo->hash = a->hash;
+
+    if (a->izq == NULL && a->der == NULL){
+        nuevoNodo->izq = NULL;
+        nuevoNodo->der = NULL;
+        (*pult) = nuevoNodo;
+        return nuevoNodo;
+    }
+
+    else if (a->izq == NULL && a->der != NULL){
+        Nodo* hder = desbalanceado(a->der, pult);
+        nuevoNodo->izq = NULL;
+        nuevoNodo->der = hder;
+        return nuevoNodo;
+    }
+
+    else if(a->izq != NULL && a->der == NULL){
+        Nodo* hizq = desbalanceado(a->izq, pult);
+        (*pult)->der = nuevoNodo;
+        (*pult)=(*pult)->der;
+        nuevoNodo->izq = NULL;
+
+        return hizq;
+    }
+
+    else if(a->der != NULL && a->izq != NULL){
+        Nodo* hizq = desbalanceado(a->izq, pult);
+        (*pult)->der=nuevoNodo;
+        nuevoNodo->izq=NULL;
+        Nodo* hder = desbalanceado(a->der, pult);
+        nuevoNodo->der = hder;
+        return hizq;
+    }
+
+
+
+
+}
+
