@@ -64,6 +64,7 @@ Nodo* desbalanceado(Nodo *a, Nodo **pult){
         (*pult)->der = nuevoNodo;
         (*pult)=(*pult)->der;
         nuevoNodo->izq = NULL;
+        nuevoNodo->der = NULL;
 
         return hizq;
     }
@@ -76,9 +77,6 @@ Nodo* desbalanceado(Nodo *a, Nodo **pult){
         nuevoNodo->der = hder;
         return hizq;
     }
-
-
-
-
+    return nuevoNodo;
 }
 
