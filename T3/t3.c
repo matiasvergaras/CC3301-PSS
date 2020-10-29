@@ -4,12 +4,12 @@
 //
 
 #include "t3.h"
+#include <stdlib.h>
+#include <stddef.h>
+
 
 void desbalancear(Nodo **pa, Nodo **pult){
-    if ((*pa)==NULL){
-    }
-    
-    else if ((*pa)->izq == NULL && (*pa)->der == NULL){
+    if ((*pa)==NULL || ((*pa)->izq == NULL && (*pa)->der == NULL)){
         (*pult) = (*pa);
     }
 
@@ -43,45 +43,48 @@ void desbalancear(Nodo **pa, Nodo **pult){
 
 
 Nodo* desbalanceado(Nodo *a, Nodo **pult){
-    Nodo* nuevoNodo = malloc(sizeof(Nodo));
-    nuevoNodo->id = a->id;
-    nuevoNodo->hash = a->hash;
     if (a == NULL){
+        (*pult) = NULL;
         return a;
     }
-    
-    else if (a->izq == NULL && a->der == NULL){
-        nuevoNodo->izq = NULL;
-        nuevoNodo->der = NULL;
-        (*pult) = nuevoNodo;
+
+    else{
+        Nodo* nuevoNodo = malloc(sizeof(Nodo));
+        nuevoNodo->id = a->id;
+        nuevoNodo->hash = a->hash;
+
+        if (a->izq == NULL && a->der == NULL){
+            nuevoNodo->izq = NULL;
+            nuevoNodo->der = NULL;
+            (*pult) = nuevoNodo;
+            return nuevoNodo;
+        }
+
+        else if (a->izq == NULL && a->der != NULL){
+            Nodo* hder = desbalanceado(a->der, pult);
+            nuevoNodo->izq = NULL;
+            nuevoNodo->der = hder;
+            return nuevoNodo;
+        }
+
+        else if(a->izq != NULL && a->der == NULL){
+            Nodo* hizq = desbalanceado(a->izq, pult);
+            (*pult)->der = nuevoNodo;
+            (*pult)=(*pult)->der;
+            nuevoNodo->izq = NULL;
+            nuevoNodo->der = NULL;
+            return hizq;
+        }
+
+        else if(a->der != NULL && a->izq != NULL){
+            Nodo* hizq = desbalanceado(a->izq, pult);
+            (*pult)->der=nuevoNodo;
+            nuevoNodo->izq=NULL;
+            Nodo* hder = desbalanceado(a->der, pult);
+            nuevoNodo->der = hder;
+            return hizq;
+        }
         return nuevoNodo;
     }
-
-    else if (a->izq == NULL && a->der != NULL){
-        Nodo* hder = desbalanceado(a->der, pult);
-        nuevoNodo->izq = NULL;
-        nuevoNodo->der = hder;
-        return nuevoNodo;
-    }
-
-    else if(a->izq != NULL && a->der == NULL){
-        Nodo* hizq = desbalanceado(a->izq, pult);
-        (*pult)->der = nuevoNodo;
-        (*pult)=(*pult)->der;
-        nuevoNodo->izq = NULL;
-        nuevoNodo->der = NULL;
-
-        return hizq;
-    }
-
-    else if(a->der != NULL && a->izq != NULL){
-        Nodo* hizq = desbalanceado(a->izq, pult);
-        (*pult)->der=nuevoNodo;
-        nuevoNodo->izq=NULL;
-        Nodo* hder = desbalanceado(a->der, pult);
-        nuevoNodo->der = hder;
-        return hizq;
-    }
-    return nuevoNodo;
 }
 

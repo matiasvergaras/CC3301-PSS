@@ -4,51 +4,52 @@ Alumno: Matias Vergara Silva
 RESULTADOS OBTENIDOS
 //-----------------------------------------------------------//
 //-------------------------make test-g-----------------------//
+
 Benchmarks
-Tiempo de desbalanceado de 500 miles de nodos: 18112 usegs.
-Tiempo de desbalancear 500 miles de nodos: 10391 usegs.
+Tiempo de desbalanceado de 500 miles de nodos: 17782 usegs.
+Tiempo de desbalancear 500 miles de nodos: 7944 usegs.
 Aprobado
-Tiempo de desbalanceado de 1000 miles de nodos: 39498 usegs.
-Tiempo de desbalancear 1000 miles de nodos: 15948 usegs.
+Tiempo de desbalanceado de 1000 miles de nodos: 35262 usegs.
+Tiempo de desbalancear 1000 miles de nodos: 15729 usegs.
 Aprobado
-Tiempo de desbalanceado de 1500 miles de nodos: 61412 usegs.
-Tiempo de desbalancear 1500 miles de nodos: 29232 usegs.
+Tiempo de desbalanceado de 1500 miles de nodos: 58460 usegs.
+Tiempo de desbalancear 1500 miles de nodos: 28660 usegs.
 Aprobado
-Tiempo de desbalanceado de 2000 miles de nodos: 71671 usegs.
-Tiempo de desbalancear 2000 miles de nodos: 32446 usegs.
+Tiempo de desbalanceado de 2000 miles de nodos: 71259 usegs.
+Tiempo de desbalancear 2000 miles de nodos: 33562 usegs.
 Aprobado
-Tiempo de desbalanceado de 2500 miles de nodos: 92966 usegs.
-Tiempo de desbalancear 2500 miles de nodos: 40875 usegs.
+Tiempo de desbalanceado de 2500 miles de nodos: 83578 usegs.
+Tiempo de desbalancear 2500 miles de nodos: 40719 usegs.
 Aprobado
-Tiempo de desbalanceado de 3000 miles de nodos: 106012 usegs.
-Tiempo de desbalancear 3000 miles de nodos: 46031 usegs.
+Tiempo de desbalanceado de 3000 miles de nodos: 105748 usegs.
+Tiempo de desbalancear 3000 miles de nodos: 46565 usegs.
 Aprobado
-Tiempo de desbalanceado de 3500 miles de nodos: 123043 usegs.
-Tiempo de desbalancear 3500 miles de nodos: 56144 usegs.
+Tiempo de desbalanceado de 3500 miles de nodos: 121456 usegs.
+Tiempo de desbalancear 3500 miles de nodos: 55368 usegs.
 Aprobado
-Tiempo de desbalanceado de 4000 miles de nodos: 142717 usegs.
-Tiempo de desbalancear 4000 miles de nodos: 61828 usegs.
+Tiempo de desbalanceado de 4000 miles de nodos: 139295 usegs.
+Tiempo de desbalancear 4000 miles de nodos: 61615 usegs.
 Aprobado
-Tiempo de desbalanceado de 4500 miles de nodos: 161288 usegs.
-Tiempo de desbalancear 4500 miles de nodos: 70194 usegs.
+Tiempo de desbalanceado de 4500 miles de nodos: 152586 usegs.
+Tiempo de desbalancear 4500 miles de nodos: 72104 usegs.
 Aprobado
-Tiempo de desbalanceado de 5000 miles de nodos: 176560 usegs.
-Tiempo de desbalancear 5000 miles de nodos: 80648 usegs.
+Tiempo de desbalanceado de 5000 miles de nodos: 174691 usegs.
+Tiempo de desbalancear 5000 miles de nodos: 79619 usegs.
 Aprobado
 
 Grafico del tiempo de desbalanceado.  Debe ser +/- lineal.
       *
-             *
+            *
                     *
                         *
-                               *
+                            *
                                     *
                                          *
-                                                *
-                                                      *
+                                               *
+                                                    *
                                                             *
 Grafico del tiempo de desbalancear.  Debe ser +/- lineal.
-   *
+  *
      *
          *
            *
@@ -56,122 +57,125 @@ Grafico del tiempo de desbalancear.  Debe ser +/- lineal.
                *
                    *
                      *
-                       *
+                        *
                            *
 
 //-----------------------------------------------------------//
 //-------------------------make test-O-----------------------//
 
 Benchmarks
-Tiempo de desbalanceado de 500 miles de nodos: 15689 usegs.
-Tiempo de desbalancear 500 miles de nodos: 7461 usegs.
+Tiempo de desbalanceado de 500 miles de nodos: 15825 usegs.
+Tiempo de desbalancear 500 miles de nodos: 9421 usegs.
 Aprobado
-Tiempo de desbalanceado de 1000 miles de nodos: 33522 usegs.
-Tiempo de desbalancear 1000 miles de nodos: 9005 usegs.
+Tiempo de desbalanceado de 1000 miles de nodos: 32685 usegs.
+Tiempo de desbalancear 1000 miles de nodos: 10332 usegs.
 Aprobado
-Tiempo de desbalanceado de 1500 miles de nodos: 53466 usegs.
-Tiempo de desbalancear 1500 miles de nodos: 20055 usegs.
+Tiempo de desbalanceado de 1500 miles de nodos: 47959 usegs.
+Tiempo de desbalancear 1500 miles de nodos: 20979 usegs.
 Aprobado
-Tiempo de desbalanceado de 2000 miles de nodos: 65520 usegs.
-Tiempo de desbalancear 2000 miles de nodos: 24903 usegs.
+Tiempo de desbalanceado de 2000 miles de nodos: 66436 usegs.
+Tiempo de desbalancear 2000 miles de nodos: 23619 usegs.
 Aprobado
-Tiempo de desbalanceado de 2500 miles de nodos: 84956 usegs.
-Tiempo de desbalancear 2500 miles de nodos: 30925 usegs.
+Tiempo de desbalanceado de 2500 miles de nodos: 76295 usegs.
+Tiempo de desbalancear 2500 miles de nodos: 29047 usegs.
 Aprobado
-Tiempo de desbalanceado de 3000 miles de nodos: 98199 usegs.
-Tiempo de desbalancear 3000 miles de nodos: 31030 usegs.
+Tiempo de desbalanceado de 3000 miles de nodos: 101165 usegs.
+Tiempo de desbalancear 3000 miles de nodos: 32147 usegs.
 Aprobado
-Tiempo de desbalanceado de 3500 miles de nodos: 112896 usegs.
-Tiempo de desbalancear 3500 miles de nodos: 39838 usegs.
+Tiempo de desbalanceado de 3500 miles de nodos: 109543 usegs.
+Tiempo de desbalancear 3500 miles de nodos: 37380 usegs.
 Aprobado
-Tiempo de desbalanceado de 4000 miles de nodos: 125412 usegs.
-Tiempo de desbalancear 4000 miles de nodos: 42044 usegs.
+Tiempo de desbalanceado de 4000 miles de nodos: 123994 usegs.
+Tiempo de desbalancear 4000 miles de nodos: 46239 usegs.
 Aprobado
-Tiempo de desbalanceado de 4500 miles de nodos: 142164 usegs.
-Tiempo de desbalancear 4500 miles de nodos: 50265 usegs.
+Tiempo de desbalanceado de 4500 miles de nodos: 138231 usegs.
+Tiempo de desbalancear 4500 miles de nodos: 52677 usegs.
 Aprobado
-Tiempo de desbalanceado de 5000 miles de nodos: 159350 usegs.
-Tiempo de desbalancear 5000 miles de nodos: 55931 usegs.
+Tiempo de desbalanceado de 5000 miles de nodos: 160015 usegs.
+Tiempo de desbalancear 5000 miles de nodos: 54266 usegs.
 Aprobado
 
 Grafico del tiempo de desbalanceado.  Debe ser +/- lineal.
      *
             *
-                    *
+                 *
                         *
-                               *
-                                    *
-                                          *
-                                               *
-                                                     *
+                            *
+                                     *
+                                         *
+                                              *
+                                                   *
                                                             *
 Grafico del tiempo de desbalancear.  Debe ser +/- lineal.
-  *
+   *
    *
        *
-         *
-           *
-           *
-               *
-               *
-                  *
-                     *
+        *
+          *
+            *
+              *
+                 *
+                   *
+                    *
+
 
 //-----------------------------------------------------------//
 //----------------------make test-O-m32----------------------//
+
 Benchmarks
-Tiempo de desbalanceado de 500 miles de nodos: 28521 usegs.
-Tiempo de desbalancear 500 miles de nodos: 8689 usegs.
+Tiempo de desbalanceado de 500 miles de nodos: 19149 usegs.
+Tiempo de desbalancear 500 miles de nodos: 6564 usegs.
 Aprobado
-Tiempo de desbalanceado de 1000 miles de nodos: 38534 usegs.
-Tiempo de desbalancear 1000 miles de nodos: 13724 usegs.
+Tiempo de desbalanceado de 1000 miles de nodos: 41080 usegs.
+Tiempo de desbalancear 1000 miles de nodos: 14959 usegs.
 Aprobado
-Tiempo de desbalanceado de 1500 miles de nodos: 57168 usegs.
-Tiempo de desbalancear 1500 miles de nodos: 18994 usegs.
+Tiempo de desbalanceado de 1500 miles de nodos: 55715 usegs.
+Tiempo de desbalancear 1500 miles de nodos: 24523 usegs.
 Aprobado
-Tiempo de desbalanceado de 2000 miles de nodos: 72454 usegs.
-Tiempo de desbalancear 2000 miles de nodos: 31063 usegs.
+Tiempo de desbalanceado de 2000 miles de nodos: 73992 usegs.
+Tiempo de desbalancear 2000 miles de nodos: 24572 usegs.
 Aprobado
-Tiempo de desbalanceado de 2500 miles de nodos: 92791 usegs.
-Tiempo de desbalancear 2500 miles de nodos: 31149 usegs.
+Tiempo de desbalanceado de 2500 miles de nodos: 88641 usegs.
+Tiempo de desbalancear 2500 miles de nodos: 31756 usegs.
 Aprobado
-Tiempo de desbalanceado de 3000 miles de nodos: 118549 usegs.
-Tiempo de desbalancear 3000 miles de nodos: 37325 usegs.
+Tiempo de desbalanceado de 3000 miles de nodos: 115585 usegs.
+Tiempo de desbalancear 3000 miles de nodos: 41695 usegs.
 Aprobado
-Tiempo de desbalanceado de 3500 miles de nodos: 139394 usegs.
-Tiempo de desbalancear 3500 miles de nodos: 44390 usegs.
+Tiempo de desbalanceado de 3500 miles de nodos: 131740 usegs.
+Tiempo de desbalancear 3500 miles de nodos: 41210 usegs.
 Aprobado
-Tiempo de desbalanceado de 4000 miles de nodos: 157302 usegs.
-Tiempo de desbalancear 4000 miles de nodos: 51134 usegs.
+Tiempo de desbalanceado de 4000 miles de nodos: 156036 usegs.
+Tiempo de desbalancear 4000 miles de nodos: 50108 usegs.
 Aprobado
-Tiempo de desbalanceado de 4500 miles de nodos: 169513 usegs.
-Tiempo de desbalancear 4500 miles de nodos: 57413 usegs.
+Tiempo de desbalanceado de 4500 miles de nodos: 188294 usegs.
+Tiempo de desbalancear 4500 miles de nodos: 54414 usegs.
 Aprobado
-Tiempo de desbalanceado de 5000 miles de nodos: 194456 usegs.
-Tiempo de desbalancear 5000 miles de nodos: 69241 usegs.
+Tiempo de desbalanceado de 5000 miles de nodos: 186067 usegs.
+Tiempo de desbalancear 5000 miles de nodos: 63621 usegs.
 Aprobado
 
 Grafico del tiempo de desbalanceado.  Debe ser +/- lineal.
-        *
-           *
+      *
+             *
                  *
-                      *
+                       *
                             *
-                                    *
-                                           *
-                                                *
-                                                    *
+                                     *
+                                          *
+                                                  *
+                                                            *
                                                             *
 Grafico del tiempo de desbalancear.  Debe ser +/- lineal.
   *
     *
-     *
-         *
-         *
-           *
+       *
+       *
+          *
              *
-               *
+             *
+                *
                  *
-                     *
+                    *
+
 
 
