@@ -6,8 +6,10 @@
 #include "t3.h"
 
 void desbalancear(Nodo **pa, Nodo **pult){
-
-    if ((*pa)->izq == NULL && (*pa)->der == NULL){
+    if ((*pa)==NULL){
+    }
+    
+    else if ((*pa)->izq == NULL && (*pa)->der == NULL){
         (*pult) = (*pa);
     }
 
@@ -44,8 +46,11 @@ Nodo* desbalanceado(Nodo *a, Nodo **pult){
     Nodo* nuevoNodo = malloc(sizeof(Nodo));
     nuevoNodo->id = a->id;
     nuevoNodo->hash = a->hash;
-
-    if (a->izq == NULL && a->der == NULL){
+    if (a == NULL){
+        return a;
+    }
+    
+    else if (a->izq == NULL && a->der == NULL){
         nuevoNodo->izq = NULL;
         nuevoNodo->der = NULL;
         (*pult) = nuevoNodo;
