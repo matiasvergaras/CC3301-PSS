@@ -50,6 +50,9 @@ double llenarMaletaPar(double w[], double v[], int z[], int n,
     for (int i=0; i<n; i++){
         z[i] = args[index_best].z[i];
     }
+    for (int k=0; k<8; k++){
+        free(args[k].z);
+    }
 
     return best;
 }
